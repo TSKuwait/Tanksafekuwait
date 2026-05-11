@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=1920">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <title>TankSafe — The Invisible Loss</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -700,6 +700,98 @@ html,body{
 .col{flex-direction:column}
 .wrap{flex-wrap:wrap}
 
+/* ═══════════════════════════════════════════════════════════
+   RESPONSIVE DESIGN — TABLET (768px-1024px)
+═══════════════════════════════════════════════════════════ */
+@media (max-width:1024px){
+  .pad{padding:clamp(28px,6vw,48px)!important}
+  .pad-xl{padding:clamp(40px,8vw,64px)!important}
+  .t-hero{font-size:clamp(3.2rem,10vw,6rem)!important}
+  .t-display{font-size:clamp(2rem,6vw,4rem)!important}
+  .t-head{font-size:clamp(1.2rem,3vw,1.8rem)!important}
+  .product-img{max-height:50vh!important}
+  .grid-2{grid-template-columns:1fr!important}
+  .grid-3{grid-template-columns:repeat(2,1fr)!important;gap:24px!important}
+  .grid-4{grid-template-columns:repeat(2,1fr)!important}
+  .hud-dots{display:none}
+  .hud-num{display:none}
+}
+
+/* ═══════════════════════════════════════════════════════════
+   RESPONSIVE DESIGN — MOBILE (<768px)
+═══════════════════════════════════════════════════════════ */
+@media (max-width:768px){
+  .deck{width:100vw;height:100vh;overflow:hidden}
+  .slide{display:flex!important;flex-direction:column;justify-content:center;overflow-y:auto;-webkit-overflow-scrolling:touch}
+  .slide.active{display:flex!important}
+
+  /* Typography scaling */
+  .t-hero{font-size:clamp(2rem,8vw,4rem)!important;letter-spacing:-.02em!important}
+  .t-display{font-size:clamp(1.4rem,5vw,2.8rem)!important}
+  .t-head{font-size:clamp(1rem,3vw,1.4rem)!important}
+  .t-subhead{font-size:clamp(.9rem,2.5vw,1.2rem)!important}
+  .t-body{font-size:clamp(.75rem,2vw,1rem)!important}
+  .t-label{font-size:clamp(.65rem,1.8vw,.8rem)!important}
+
+  /* Spacing & Padding */
+  .pad{padding:clamp(20px,5vw,32px)!important}
+  .pad-xl{padding:clamp(24px,6vw,40px)!important}
+  .pad-sm{padding:clamp(12px,3vw,20px)!important}
+  .full{padding:clamp(20px,5vw,32px)!important}
+
+  /* Layouts */
+  .grid-2{grid-template-columns:1fr!important;gap:16px!important}
+  .grid-3{grid-template-columns:1fr!important;gap:16px!important}
+  .grid-4{grid-template-columns:1fr!important;gap:16px!important}
+  .gap-sm{gap:12px!important}
+  .gap-md{gap:16px!important}
+  .gap-lg{gap:20px!important}
+
+  /* Products & Images */
+  .product-img{max-height:40vh!important;width:auto!important}
+  .product-frame{min-height:auto!important;height:auto!important}
+
+  /* OEM Grid mobile friendly */
+  .oem-grid{grid-template-columns:1fr!important;border-left:none!important}
+  .oem-cell{border-left:none!important;padding:16px!important}
+
+  /* Hide HUD on mobile */
+  .hud-dots{display:none!important}
+  .hud-num{display:none!important}
+  .hud-sound{bottom:12px!important;left:12px!important;font-size:.5rem!important}
+
+  /* Modal adjustments */
+  .modal-inner{width:100vw!important;max-width:100%!important;aspect-ratio:16/9!important;max-height:60vh!important}
+  .modal-close{top:-28px!important;font-size:.5rem!important}
+
+  /* Hero section spacing */
+  .oline{margin:20px 0!important}
+
+  /* Flex wrapping */
+  .flex{flex-wrap:wrap!important}
+
+  /* Button & CTA sizing */
+  .cta-row{padding:12px 0!important;flex-direction:column!important;align-items:flex-start!important;gap:8px!important}
+  .cta-arr{margin-left:0!important;margin-top:8px!important}
+
+  /* Logo sizing */
+  svg{max-width:100%!important;height:auto!important}
+}
+
+/* ═══════════════════════════════════════════════════════════
+   RESPONSIVE DESIGN — SMALL MOBILE (<480px)
+═══════════════════════════════════════════════════════════ */
+@media (max-width:480px){
+  .t-hero{font-size:clamp(1.6rem,7vw,2.8rem)!important}
+  .t-display{font-size:clamp(1.2rem,4.5vw,2rem)!important}
+  .grid-3>div{display:flex;flex-direction:column}
+  .grid-3 .val{font-size:1.4rem!important}
+  .pad{padding:clamp(16px,4vw,24px)!important}
+  .pad-xl{padding:clamp(16px,5vw,28px)!important}
+  .hud-sound{font-size:.45rem!important}
+  .t-hero br{display:none}
+}
+
 </style>
 </head>
 <body>
@@ -729,12 +821,18 @@ html,body{
   <div class="noise"></div>
 
   <div class="full col space pad">
-    <!-- Logo -->
-    <div class="a1">
-      <svg width="140" height="32" viewBox="0 0 140 32" fill="none" xmlns="http://www.w3.org/2000/svg" style="opacity:.65">
-        <rect width="140" height="32" rx="6" fill="#FF4F03"/>
-        <text x="70" y="22" font-family="Poppins,sans-serif" font-weight="800" font-size="13" text-anchor="middle" fill="#fff" letter-spacing="1">TANKSAFE</text>
-        <text x="130" y="10" font-family="Poppins,sans-serif" font-size="8" fill="#fff" opacity=".7">®</text>
+    <!-- Logo — Brand Mark -->
+    <div class="a1" style="margin-bottom:clamp(40px,8vh,80px)">
+      <svg width="clamp(120px,15vw,180px)" height="clamp(36px,4.5vw,48px)" viewBox="0 0 180 48" fill="none" xmlns="http://www.w3.org/2000/svg" style="opacity:.9">
+        <defs>
+          <linearGradient id="logoGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" style="stop-color:#FF4F03;stop-opacity:1" />
+            <stop offset="100%" style="stop-color:#FF6B28;stop-opacity:1" />
+          </linearGradient>
+        </defs>
+        <rect width="180" height="48" rx="12" fill="url(#logoGrad)" stroke="#FF3F00" stroke-width="0.5" opacity="0.95"/>
+        <text x="90" y="32" font-family="Poppins,sans-serif" font-weight="800" font-size="18" text-anchor="middle" fill="#fff" letter-spacing="2.5">TANKSAFE</text>
+        <text x="162" y="14" font-family="Poppins,sans-serif" font-size="11" font-weight="600" fill="#fff" opacity=".85">®</text>
       </svg>
     </div>
 
@@ -855,8 +953,23 @@ html,body{
   </div>
 
   <div class="full col center pad" style="position:relative;z-index:2">
+    <!-- Brand Logo -->
+    <div class="a1" style="margin-bottom:32px">
+      <svg width="clamp(100px,12vw,140px)" height="clamp(28px,3.5vw,38px)" viewBox="0 0 180 48" fill="none" xmlns="http://www.w3.org/2000/svg" style="opacity:.75">
+        <defs>
+          <linearGradient id="logoGrad2" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" style="stop-color:#FF4F03;stop-opacity:1" />
+            <stop offset="100%" style="stop-color:#FF6B28;stop-opacity:1" />
+          </linearGradient>
+        </defs>
+        <rect width="180" height="48" rx="12" fill="url(#logoGrad2)" stroke="#FF3F00" stroke-width="0.5" opacity="0.9"/>
+        <text x="90" y="32" font-family="Poppins,sans-serif" font-weight="800" font-size="18" text-anchor="middle" fill="#fff" letter-spacing="2.5">TANKSAFE</text>
+        <text x="162" y="14" font-family="Poppins,sans-serif" font-size="11" font-weight="600" fill="#fff" opacity=".85">®</text>
+      </svg>
+    </div>
+
     <div style="text-align:center;max-width:800px">
-      <p class="t-label a1" style="margin-bottom:52px">Industrial Fuel Security</p>
+      <p class="t-label a2" style="margin-bottom:clamp(28px,4vh,52px)">Industrial Fuel Security</p>
 
       <!-- Large wordmark -->
       <h1 class="t-hero a2" style="font-size:clamp(5.5rem,14vw,12rem);letter-spacing:-.03em">
